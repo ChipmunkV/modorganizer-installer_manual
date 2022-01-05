@@ -27,7 +27,11 @@ along with Mod Organizer.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtPlugin>
 #include <QDialog>
 
+#ifdef _WIN32
 #include <Shellapi.h>
+#else
+#include <QProcess>
+#endif
 
 #include "moddatachecker.h"
 
@@ -98,6 +102,7 @@ void InstallerManual::openFile(const FileTreeEntry *entry)
 {
   QString tempName = manager()->extractFile(entry->shared_from_this());
 
+#ifdef _WIN32
   SHELLEXECUTEINFOW execInfo;
   memset(&execInfo, 0, sizeof(SHELLEXECUTEINFOW));
   execInfo.cbSize = sizeof(SHELLEXECUTEINFOW);
@@ -109,6 +114,11 @@ void InstallerManual::openFile(const FileTreeEntry *entry)
   if (!::ShellExecuteExW(&execInfo)) {
     qCritical("failed to spawn %s: %d", qUtf8Printable(tempName), ::GetLastError());
   }
+#else
+  if (!QProcess::startDetached("xdg-open", QStringList(tempName))) {
+    qCritical("failed to spawn %s", tempName.toStdString().c_str());
+  }
+#endif
 }
 
 

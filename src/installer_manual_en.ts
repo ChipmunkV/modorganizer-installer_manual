@@ -73,11 +73,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="installdialog.cpp" line="125"/>
-        <source>Enter a directory name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="installdialog.cpp" line="95"/>
         <source>Cannot check the content of &lt;%1&gt;.</source>
         <translation type="unfinished"></translation>
@@ -110,6 +105,11 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="installdialog.cpp" line="117"/>
         <source>Cannot create directory under a file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="installdialog.cpp" line="125"/>
+        <source>Enter a directory name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -151,12 +151,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>InstallerManual</name>
     <message>
-        <location filename="installermanual.cpp" line="56"/>
+        <location filename="installermanual.cpp" line="60"/>
         <source>Manual Installer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="installermanual.cpp" line="66"/>
+        <location filename="installermanual.cpp" line="70"/>
         <source>Fallback installer for mods that can be extracted but can&apos;t be handled by another installer</source>
         <translation type="unfinished"></translation>
     </message>
